@@ -8,7 +8,36 @@
 	<packaging>jar</packaging>
 
 	<name>CrumbUtil</name>
-	<url>forge.crumbleworks.org/crumbUtil</url>
+	<description>A utility library.</description>
+	<url>https://github.com/CrumbleWorks/CrumbUtil</url>
+
+	<licenses>
+	  <license>
+	    <name>MIT License</name>
+	    <url>http://www.opensource.org/licenses/mit-license.php</url>
+	  </license>
+	</licenses>
+	
+	<developers>
+      <developer>
+        <name>Michael Stocker</name>
+        <email>michael.stocker@crumbleworks.org</email>
+        <organization>CrumbleWorks</organization>
+        <organizationUrl>https://crumbleworks.org</organizationUrl>
+      </developer>
+      <developer>
+        <name>Patrick Bächli</name>
+        <email>patrick.baechli@crumbleworks.org</email>
+        <organization>CrumbleWorks</organization>
+        <organizationUrl>https://crumbleworks.org</organizationUrl>
+      </developer>
+    </developers>
+
+    <scm>
+      <connection>scm:git:git://github.com/CrumbleWorks/CrumbUtil.git</connection>
+      <developerConnection>scm:git:ssh://github.com:CrumbleWorks/CrumbUtil.git</developerConnection>
+      <url>https://github.com/CrumbleWorks/CrumbUtil/tree/master</url>
+    </scm>
 
 	<properties>
 		<!-- SOURCE ENCODING -->
