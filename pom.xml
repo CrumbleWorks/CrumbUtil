@@ -12,43 +12,43 @@
 	<url>https://github.com/CrumbleWorks/CrumbUtil</url>
 
 	<licenses>
-	  <license>
-	    <name>MIT License</name>
-	    <url>http://www.opensource.org/licenses/mit-license.php</url>
-	  </license>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
 	</licenses>
-	
-	<developers>
-      <developer>
-        <name>Michael Stocker</name>
-        <email>michael.stocker@crumbleworks.org</email>
-        <organization>CrumbleWorks</organization>
-        <organizationUrl>https://crumbleworks.org</organizationUrl>
-      </developer>
-      <developer>
-        <name>Patrick Bächli</name>
-        <email>patrick.baechli@crumbleworks.org</email>
-        <organization>CrumbleWorks</organization>
-        <organizationUrl>https://crumbleworks.org</organizationUrl>
-      </developer>
-    </developers>
-    
-    <distributionManagement>
-      <snapshotRepository>
-        <id>ossrh</id>
-        <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-      </snapshotRepository>
-      <repository>
-        <id>ossrh</id>
-        <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-      </repository>
-    </distributionManagement>
 
-    <scm>
-      <connection>scm:git:git://github.com/CrumbleWorks/CrumbUtil.git</connection>
-      <developerConnection>scm:git:ssh://github.com:CrumbleWorks/CrumbUtil.git</developerConnection>
-      <url>https://github.com/CrumbleWorks/CrumbUtil/tree/master</url>
-    </scm>
+	<developers>
+		<developer>
+			<name>Michael Stocker</name>
+			<email>michael.stocker@crumbleworks.org</email>
+			<organization>CrumbleWorks</organization>
+			<organizationUrl>https://crumbleworks.org</organizationUrl>
+		</developer>
+		<developer>
+			<name>Patrick Bächli</name>
+			<email>patrick.baechli@crumbleworks.org</email>
+			<organization>CrumbleWorks</organization>
+			<organizationUrl>https://crumbleworks.org</organizationUrl>
+		</developer>
+	</developers>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:git://github.com/CrumbleWorks/CrumbUtil.git</connection>
+		<developerConnection>scm:git:ssh://github.com:CrumbleWorks/CrumbUtil.git</developerConnection>
+		<url>https://github.com/CrumbleWorks/CrumbUtil/tree/master</url>
+	</scm>
 
 	<properties>
 		<!-- SOURCE ENCODING -->
