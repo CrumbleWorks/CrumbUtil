@@ -1,3 +1,5 @@
+![Maven Central](https://img.shields.io/maven-central/v/org.crumbleworks.forge.crumbutil/crumbutil?style=flat-square)
+
 # CrumbUtil
 
 A utility library for crumbleworks projects.
