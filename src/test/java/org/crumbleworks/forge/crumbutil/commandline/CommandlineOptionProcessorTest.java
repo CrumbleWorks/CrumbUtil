@@ -1,17 +1,16 @@
 package org.crumbleworks.forge.crumbutil.commandline;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import org.crumbleworks.forge.crumbutil.commandline.CommandlineOptionProcessor;
 import org.crumbleworks.forge.crumbutil.commandline.CommandlineOptionProcessor.Option;
-import org.crumbleworks.forge.crumbutil.commandline.OptionAlreadyExistsException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Michael Stocker
@@ -66,12 +65,12 @@ public class CommandlineOptionProcessorTest {
         assertEquals(new ArrayList<String>(Arrays.asList(new String[]{"-c", "-f", "--zulu", "--gulf"})), optionParameters);
     }
     
-    @Test(expected = OptionAlreadyExistsException.class)
+    @Test
     public void testAddingOptionTwice() throws OptionAlreadyExistsException {
         CommandlineOptionProcessor cop = new CommandlineOptionProcessor(false); //first bool doesnt matter here
         
         cop.createParameter("-f", "--flag", null, (s)->{});
-        cop.createParameter("-f", "--flag", null, (s)->{});
+        assertThrows(OptionAlreadyExistsException.class, () -> cop.createParameter("-f", "--flag", null, (s)->{}));
     }
     
     @Test

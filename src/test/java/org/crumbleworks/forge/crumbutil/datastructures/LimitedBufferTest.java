@@ -1,10 +1,11 @@
 package org.crumbleworks.forge.crumbutil.datastructures;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Michael Stocker
@@ -109,32 +110,32 @@ public class LimitedBufferTest {
         assertArrayEquals(new Integer[]{}, buff.read(11));
     }
     
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void testReadFrom0_Empty() {
         LimitedBuffer<Integer> buff = new LimitedBuffer<>(5, Integer.class, Integer[].class);
         
-        buff.readFrom(0);
+        assertThrows(IndexOutOfBoundsException.class, () -> buff.readFrom(0));
     }
     
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void testReadFrom1_Empty() {
         LimitedBuffer<Integer> buff = new LimitedBuffer<>(5, Integer.class, Integer[].class);
         
-        buff.readFrom(1);
+        assertThrows(IndexOutOfBoundsException.class, () -> buff.readFrom(1));
     }
     
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void testReadManyFrom0_Empty() {
         LimitedBuffer<Integer> buff = new LimitedBuffer<>(5, Integer.class, Integer[].class);
         
-        buff.readFrom(0, 2);
+        assertThrows(IndexOutOfBoundsException.class, () -> buff.readFrom(0, 2));
     }
     
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void testReadManyFrom1_Empty() {
         LimitedBuffer<Integer> buff = new LimitedBuffer<>(5, Integer.class, Integer[].class);
         
-        buff.readFrom(1, 2);
+        assertThrows(IndexOutOfBoundsException.class, () -> buff.readFrom(1, 2));
     }
     
     //WRITTEN

@@ -2,26 +2,27 @@ package org.crumbleworks.forge.crumbutil.datastructures;
 
 import static org.crumbleworks.forge.crumbutil.datastructures.ListHelpers.createCharacterArrayListWithLoad;
 import static org.crumbleworks.forge.crumbutil.datastructures.ListHelpers.createStringOfNElements;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
 import org.crumbleworks.forge.crumbutil.datastructures.HeadInRingBuffer;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("unused")
 public class HeadInRingBufferTest {
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void constructWithCapacityZero() {
-        List<Integer> ringBuffer = new HeadInRingBuffer<Integer>(0);
+    	assertThrows(IllegalArgumentException.class, () -> new HeadInRingBuffer<Integer>(0));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void constructWithCapacityNegative() {
-        List<Integer> ringBuffer = new HeadInRingBuffer<Integer>(-7);
+    	assertThrows(IllegalArgumentException.class, () -> new HeadInRingBuffer<Integer>(-7));
     }
     
     @Test
@@ -84,11 +85,11 @@ public class HeadInRingBufferTest {
         assertEquals((Character)elements.charAt(4) ,ring.get(4));
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void getOutsideRange() {
         String elements = createStringOfNElements(5);
         HeadInRingBuffer<Character> ring = new HeadInRingBuffer<Character>(createCharacterArrayListWithLoad(elements));
         
-        ring.get(5); //size 5; greates index > 4
+        assertThrows(IllegalArgumentException.class, () -> ring.get(5)); //size 5; greates index > 4
     }
 }

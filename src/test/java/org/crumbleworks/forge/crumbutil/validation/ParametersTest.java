@@ -1,9 +1,8 @@
 package org.crumbleworks.forge.crumbutil.validation;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.crumbleworks.forge.crumbutil.validation.Parameters;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Michael Stocker
@@ -17,9 +16,9 @@ public class ParametersTest {
         assertTrue(null != Parameters.notNull("NOT NULL"));
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkNotNullWithNullValue() {
-        Parameters.notNull(null);
+        assertThrows(IllegalArgumentException.class, () -> Parameters.notNull(null));
     }
     
     //numberology (only testing longs as ints internally call long impl)
@@ -32,9 +31,9 @@ public class ParametersTest {
         }
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkGreaterOrEqualWithInvalidCheck() {
-        Parameters.greaterOrEqual(1234234L, 1234782456925L);
+        assertThrows(IllegalArgumentException.class, () -> Parameters.greaterOrEqual(1234234L, 1234782456925L));
     }
     
     @Test
@@ -46,9 +45,9 @@ public class ParametersTest {
         }
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkSmallerOrEqualWithInvalidCheck() {
-        Parameters.smallerOrEqual(1234782456925L, 1234234L);
+    	assertThrows(IllegalArgumentException.class, () -> Parameters.smallerOrEqual(1234782456925L, 1234234L));
     }
     
     @Test
@@ -60,20 +59,20 @@ public class ParametersTest {
         }
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkMustNotBeSameWithInvalidCheck() {
-        Parameters.mustNotBeEqual(1234234L, 1234234L);
+    	assertThrows(IllegalArgumentException.class, () -> Parameters.mustNotBeEqual(1234234L, 1234234L));
     }
     
     //String not empty
-    @Test(expected = NullPointerException.class)
+    @Test
     public void checkStringNotEmptyWithNullString() {
-        Parameters.stringNotEmpty(null);
+    	assertThrows(NullPointerException.class, () -> Parameters.stringNotEmpty(null));
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkStringNotEmptyWithEmptyString() {
-        Parameters.stringNotEmpty("");
+    	assertThrows(IllegalArgumentException.class, () -> Parameters.stringNotEmpty(""));
     }
     
     @Test
@@ -82,19 +81,19 @@ public class ParametersTest {
     }
     
     //Verify against regex
-    @Test(expected = NullPointerException.class)
+    @Test
     public void checkVARWithNullString() {
-        Parameters.verifyAgainstRegex(null, "");
+        assertThrows(NullPointerException.class, () -> Parameters.verifyAgainstRegex(null, ""));
     }
     
-    @Test(expected = NullPointerException.class)
+    @Test
     public void checkVARWithNullRegex() {
-        Parameters.verifyAgainstRegex("", null);
+        assertThrows(NullPointerException.class, () -> Parameters.verifyAgainstRegex("", null));
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkVARWithNonMatching() {
-        assertEquals("Hello", Parameters.verifyAgainstRegex("99 Red Balloons", "^[A-Za-z]$"));
+    	assertThrows(IllegalArgumentException.class, () -> Parameters.verifyAgainstRegex("99 Red Balloons", "^[A-Za-z]$"));
     }
     
     @Test
@@ -117,8 +116,8 @@ public class ParametersTest {
         assertTrue(true);
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkArrayNoNullWIthNullValue() {
-        Parameters.checkForNullValues(new Object[] {null});
+    	assertThrows(IllegalArgumentException.class, () -> Parameters.checkForNullValues(new Object[] {null}));
     }
 }
