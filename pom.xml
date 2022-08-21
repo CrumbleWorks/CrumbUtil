@@ -71,8 +71,8 @@
         <junit.version>5.9.0</junit.version>
         <!-- MOCKITO -->
         <mockito.version>4.7.0</mockito.version>
-        <!-- SYSTEM STUBS -->
-        <system-stubs.version>2.0.1</system-stubs.version>
+        <!-- SYSTEM LAMBDA -->
+        <system-lambda.version>1.2.1</system-lambda.version>
 
         <!-- MAVEN PLUGINS -->
         <compiler-plugin.version>3.10.1</compiler-plugin.version>
@@ -90,7 +90,7 @@
         <project.reporting.outputEncoding>${gen-encoding}</project.reporting.outputEncoding>
         <eclipse.useProjectReferences>false</eclipse.useProjectReferences>
     </properties>
-    
+
     <dependencyManagement>
         <dependencies>
             <!-- TESTING -->
@@ -100,7 +100,7 @@
                 <artifactId>junit-bom</artifactId>
                 <version>${junit.version}</version>
                 <type>pom</type>
-                <scope>import</scope>            
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -157,9 +157,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>uk.org.webcompere</groupId>
-            <artifactId>system-stubs-jupiter</artifactId>
-            <version>${system-stubs.version}</version>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-lambda</artifactId>
+            <version>${system-lambda.version}</version>
         </dependency>
 
     </dependencies>
