@@ -1,235 +1,235 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.crumbleworks.forge.crumbutil</groupId>
-	<artifactId>crumbutil</artifactId>
-	<version>0.7.1</version>
-	<packaging>jar</packaging>
+    <groupId>org.crumbleworks.forge.crumbutil</groupId>
+    <artifactId>crumbutil</artifactId>
+    <version>0.7.1</version>
+    <packaging>jar</packaging>
 
-	<name>CrumbUtil</name>
-	<description>A utility library.</description>
-	<url>https://github.com/CrumbleWorks/CrumbUtil</url>
+    <name>CrumbUtil</name>
+    <description>A utility library.</description>
+    <url>https://github.com/CrumbleWorks/CrumbUtil</url>
 
-	<licenses>
-		<license>
-			<name>MIT License</name>
-			<url>http://www.opensource.org/licenses/mit-license.php</url>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
 
-	<developers>
-		<developer>
-			<name>Michael Stocker</name>
-			<email>michael.stocker@crumbleworks.org</email>
-			<organization>CrumbleWorks</organization>
-			<organizationUrl>https://crumbleworks.org</organizationUrl>
-		</developer>
-		<developer>
-			<name>Patrick Bächli</name>
-			<email>patrick.baechli@crumbleworks.org</email>
-			<organization>CrumbleWorks</organization>
-			<organizationUrl>https://crumbleworks.org</organizationUrl>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Michael Stocker</name>
+            <email>michael.stocker@crumbleworks.org</email>
+            <organization>CrumbleWorks</organization>
+            <organizationUrl>https://crumbleworks.org</organizationUrl>
+        </developer>
+        <developer>
+            <name>Patrick Bächli</name>
+            <email>patrick.baechli@crumbleworks.org</email>
+            <organization>CrumbleWorks</organization>
+            <organizationUrl>https://crumbleworks.org</organizationUrl>
+        </developer>
+    </developers>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
-	<scm>
-		<connection>scm:git:git://github.com/CrumbleWorks/CrumbUtil.git</connection>
-		<developerConnection>scm:git:ssh://github.com:CrumbleWorks/CrumbUtil.git</developerConnection>
-		<url>https://github.com/CrumbleWorks/CrumbUtil/tree/master</url>
-	</scm>
+    <scm>
+        <connection>scm:git:git://github.com/CrumbleWorks/CrumbUtil.git</connection>
+        <developerConnection>scm:git:ssh://github.com:CrumbleWorks/CrumbUtil.git</developerConnection>
+        <url>https://github.com/CrumbleWorks/CrumbUtil/tree/master</url>
+    </scm>
 
-	<properties>
-		<!-- SOURCE ENCODING -->
-		<gen-encoding>UTF-8</gen-encoding>
-		<properties-encoding>ISO-8859-1</properties-encoding>
+    <properties>
+        <!-- SOURCE ENCODING -->
+        <gen-encoding>UTF-8</gen-encoding>
+        <properties-encoding>ISO-8859-1</properties-encoding>
 
-		<!-- Java Native Access -->
-		<jna.version>5.12.1</jna.version>
+        <!-- Java Native Access -->
+        <jna.version>5.12.1</jna.version>
 
-		<!-- LOGGING -->
-		<!-- SLF4J -->
-		<slf4j.version>1.7.36</slf4j.version>
-		<!-- LOGBACK -->
-		<logback.version>1.2.11</logback.version>
+        <!-- LOGGING -->
+        <!-- SLF4J -->
+        <slf4j.version>1.7.36</slf4j.version>
+        <!-- LOGBACK -->
+        <logback.version>1.2.11</logback.version>
 
-		<!-- TESTING -->
-		<!-- JUNIT -->
-		<junit.version>4.13.2</junit.version>
-		<!-- MOCKITO -->
-		<mockito.version>2.28.2</mockito.version>
-		<!-- POWERMOCK -->
-		<powermock.version>2.0.9</powermock.version>
+        <!-- TESTING -->
+        <!-- JUNIT -->
+        <junit.version>4.13.2</junit.version>
+        <!-- MOCKITO -->
+        <mockito.version>2.28.2</mockito.version>
+        <!-- POWERMOCK -->
+        <powermock.version>2.0.9</powermock.version>
 
-		<!-- MAVEN PLUGINS -->
-		<compiler-plugin.version>3.10.1</compiler-plugin.version>
-		<source-plugin.version>3.2.1</source-plugin.version>
-		<javadoc-plugin.version>3.4.0</javadoc-plugin.version>
-		<eclipse-plugin.version>2.10</eclipse-plugin.version>
-		<sonar-plugin.version>3.9.1.2184</sonar-plugin.version>
-		<gpg-plugin.version>1.5</gpg-plugin.version>
+        <!-- MAVEN PLUGINS -->
+        <compiler-plugin.version>3.10.1</compiler-plugin.version>
+        <source-plugin.version>3.2.1</source-plugin.version>
+        <javadoc-plugin.version>3.4.0</javadoc-plugin.version>
+        <eclipse-plugin.version>2.10</eclipse-plugin.version>
+        <sonar-plugin.version>3.9.1.2184</sonar-plugin.version>
+        <gpg-plugin.version>1.5</gpg-plugin.version>
 
-		<!-- JAVA VERSION -->
-		<java.release>8</java.release>
+        <!-- JAVA VERSION -->
+        <java.release>8</java.release>
 
-		<!-- PROJECT SETTINGS -->
-		<project.build.sourceEncoding>${gen-encoding}</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>${gen-encoding}</project.reporting.outputEncoding>
-		<eclipse.useProjectReferences>false</eclipse.useProjectReferences>
-	</properties>
+        <!-- PROJECT SETTINGS -->
+        <project.build.sourceEncoding>${gen-encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${gen-encoding}</project.reporting.outputEncoding>
+        <eclipse.useProjectReferences>false</eclipse.useProjectReferences>
+    </properties>
 
-	<dependencies>
+    <dependencies>
 
-		<!-- Java Native Access -->
-		<dependency>
-			<groupId>net.java.dev.jna</groupId>
-			<artifactId>jna</artifactId>
-			<version>${jna.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>net.java.dev.jna</groupId>
-			<artifactId>jna-platform</artifactId>
-			<version>${jna.version}</version>
-		</dependency>
+        <!-- Java Native Access -->
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>${jna.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna-platform</artifactId>
+            <version>${jna.version}</version>
+        </dependency>
 
-		<!-- LOGGING -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-			<scope>test</scope>
-		</dependency>
+        <!-- LOGGING -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-		<!-- UNIT TESTING -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-module-junit4</artifactId>
-			<version>${powermock.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-api-mockito2</artifactId>
-			<version>${powermock.version}</version>
-			<scope>test</scope>
-		</dependency>
+        <!-- UNIT TESTING -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
-	<!-- ADDITIONAL REPOS -->
-	<repositories></repositories>
+    <!-- ADDITIONAL REPOS -->
+    <repositories></repositories>
 
-	<!-- BUILD RELATED -->
-	<build>
+    <!-- BUILD RELATED -->
+    <build>
 
-		<plugins>
+        <plugins>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${compiler-plugin.version}</version>
-				<configuration>
-					<release>${java.release}</release>
-					<encoding>${gen-encoding}</encoding>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-plugin.version}</version>
+                <configuration>
+                    <release>${java.release}</release>
+                    <encoding>${gen-encoding}</encoding>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>${source-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${javadoc-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${javadoc-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>${eclipse-plugin.version}</version>
-				<configuration>
-					<additionalConfig>
-						<file>
-							<name>.settings/org.eclipse.core.resources.prefs</name>
-							<content>
-								<![CDATA[eclipse.preferences.version=1${line.separator}encoding/<project>=${project.build.sourceEncoding}${line.separator}]]>
-							</content>
-						</file>
-					</additionalConfig>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${eclipse-plugin.version}</version>
+                <configuration>
+                    <additionalConfig>
+                        <file>
+                            <name>.settings/org.eclipse.core.resources.prefs</name>
+                            <content>
+                                <![CDATA[eclipse.preferences.version=1${line.separator}encoding/<project>=${project.build.sourceEncoding}${line.separator}]]>
+                            </content>
+                        </file>
+                    </additionalConfig>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>${sonar-plugin.version}</version>
-			</plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar-plugin.version}</version>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<!-- JDK9+ module fix -->
-					<argLine>
-				        --add-opens java.base/java.lang=ALL-UNNAMED
-				        --add-opens java.base/sun.nio.fs=ALL-UNNAMED
-				        --add-opens java.base/java.nio.file=ALL-UNNAMED
-			        </argLine>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <!-- JDK9+ module fix -->
+                    <argLine>
+                        --add-opens java.base/java.lang=ALL-UNNAMED
+                        --add-opens java.base/sun.nio.fs=ALL-UNNAMED
+                        --add-opens java.base/java.nio.file=ALL-UNNAMED
+                    </argLine>
+                </configuration>
+            </plugin>
 
-		</plugins>
+        </plugins>
 
-	</build>
-	
-	<profiles>
+    </build>
+
+    <profiles>
         <profile>
             <id>package-artifact</id>
             <build>
