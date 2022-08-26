@@ -1,7 +1,5 @@
 package org.crumbleworks.forge.crumbutil.validation;
 
-import java.util.Collection;
-
 /**
  * Offers methods to validate parameters against certain criteria. Methods of this class return the value if it checks out.
  * 
