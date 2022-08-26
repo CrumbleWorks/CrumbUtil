@@ -14,17 +14,17 @@ import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("unused")
 public class TailInRingBufferTest {
-    
+
     @Test
     public void constructWithCapacityZero() {
-    	assertThrows(IllegalArgumentException.class, () -> new TailInRingBuffer<Integer>(0));
+        assertThrows(IllegalArgumentException.class, () -> new TailInRingBuffer<Integer>(0));
     }
 
     @Test
     public void constructWithCapacityNegative() {
-    	assertThrows(IllegalArgumentException.class, () -> new TailInRingBuffer<Integer>(-7));
+        assertThrows(IllegalArgumentException.class, () -> new TailInRingBuffer<Integer>(-7));
     }
-    
+
     @Test
     public void constructWithCapacityPositive() {
         int[] capacities = {1, 2, 4, 64, 23423, 324567543}; //ultimatively these numbers depend on the underlying VMs allocated memory, so no point in going up to Integer.MAX_VALUE
@@ -33,7 +33,7 @@ public class TailInRingBufferTest {
             assertTrue(null != new TailInRingBuffer<Object>(i));
         }
     }
-    
+
     @Test
     public void constructFromOtherCollection() {
         int load = 15;
@@ -43,40 +43,39 @@ public class TailInRingBufferTest {
         assertEquals(load, ringBuffer.size());
         assertEquals(l, ringBuffer);
     }
-    
+
     /* ************************************************************************
      * ADD
      */
     @Test
     public void addElement() {
         int[] numElements = {1, 2, 3, 5, 6, 34, 234, 66354, 2345764};
-        
+
         for(int i : numElements) {
             String elements = createStringOfNElements(i);
-            
+
             TailInRingBuffer<Character> ring = new TailInRingBuffer<Character>(createCharacterArrayListWithLoad(elements));
-            
+
             String beforeAdding = elements;
             StringBuilder contents = new StringBuilder();
-            
+
             ring.add('F');
-            
+
             for(Character c : ring) {
                 contents.append(c);
             }
-            
+
             assertNotEquals(beforeAdding, contents.toString());
-            
+
             StringBuilder afterAdding = new StringBuilder(beforeAdding.substring(1, elements.length())).append("F");
-            
+
             assertEquals(afterAdding.toString(), contents.toString());
         }
     }
-    
+
     /* ************************************************************************
      * GET
      */
-    
     @Test
     public void getRandomElement() {
         String elements = createStringOfNElements(5);
@@ -84,7 +83,7 @@ public class TailInRingBufferTest {
         
         assertEquals((Character)elements.charAt(2) ,ring.get(2));
     }
-    
+
     @Test
     public void getOutsideRange() {
         String elements = createStringOfNElements(5);
