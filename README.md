@@ -1,4 +1,4 @@
-![Maven Central](https://img.shields.io/maven-central/v/org.crumbleworks.forge.crumbutil/crumbutil?style=flat-square)
+[![Badge Icon](https://img.shields.io/maven-central/v/org.crumbleworks.forge.crumbutil/crumbutil?style=flat-square)](https://mvnrepository.com/artifact/org.crumbleworks.forge.crumbutil/crumbutil)
 
 # CrumbUtil
 
