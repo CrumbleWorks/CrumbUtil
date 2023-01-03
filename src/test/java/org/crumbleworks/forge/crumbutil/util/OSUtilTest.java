@@ -1,6 +1,6 @@
 package org.crumbleworks.forge.crumbutil.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Michael Stocker

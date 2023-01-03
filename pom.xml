@@ -4,7 +4,7 @@
 
     <groupId>org.crumbleworks.forge.crumbutil</groupId>
     <artifactId>crumbutil</artifactId>
-    <version>0.7.2</version>
+    <version>0.7.3</version>
     <packaging>jar</packaging>
 
     <name>CrumbUtil</name>
@@ -65,12 +65,14 @@
         <logback.version>1.2.11</logback.version>
 
         <!-- TESTING -->
+        <!-- HAMCREST -->
+        <hamcrest.version>2.2</hamcrest.version>
         <!-- JUNIT -->
-        <junit.version>4.13.2</junit.version>
+        <junit.version>5.9.0</junit.version>
         <!-- MOCKITO -->
-        <mockito.version>2.28.2</mockito.version>
-        <!-- POWERMOCK -->
-        <powermock.version>2.0.9</powermock.version>
+        <mockito.version>4.7.0</mockito.version>
+        <!-- SYSTEM LAMBDA -->
+        <system-lambda.version>1.2.1</system-lambda.version>
 
         <!-- MAVEN PLUGINS -->
         <compiler-plugin.version>3.10.1</compiler-plugin.version>
@@ -88,6 +90,20 @@
         <project.reporting.outputEncoding>${gen-encoding}</project.reporting.outputEncoding>
         <eclipse.useProjectReferences>false</eclipse.useProjectReferences>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- TESTING -->
+            <!-- JUNIT -->
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
 
@@ -118,28 +134,32 @@
 
         <!-- UNIT TESTING -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
+            <artifactId>mockito-inline</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-            <version>${powermock.version}</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito2</artifactId>
-            <version>${powermock.version}</version>
-            <scope>test</scope>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-lambda</artifactId>
+            <version>${system-lambda.version}</version>
         </dependency>
 
     </dependencies>

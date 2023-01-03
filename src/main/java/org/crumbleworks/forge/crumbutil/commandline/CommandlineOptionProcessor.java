@@ -507,6 +507,7 @@ public final class CommandlineOptionProcessor {
                 collator.setStrength(Collator.IDENTICAL);
             }
             
+            @Override
             public final int compare(final Option o1, final Option o2) {
                 String o1Name = null, o2Name = null;
                 boolean isO1Short = false, isO2Short = false;
